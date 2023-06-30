@@ -1,5 +1,6 @@
 const draw = require("../common/draw.js");
 const constants = require("../common/constants.js");
+const utils = require("../common/utils.js");
 
 const { createCanvas } = require("canvas");
 const canvas = createCanvas(400, 400);
@@ -28,11 +29,18 @@ fileNames.forEach((fn) => {
     );
 
     generateImageFile(constants.IMG_DIR + "/" + id + ".png", paths);
+
+    utils.printProgress(id, fileNames.length * 8);
     id++;
   }
 });
 
 fs.writeFileSync(constants.SAMPLES, JSON.stringify(samples));
+
+fs.writeFileSync(
+  constants.SAMPLES_JS,
+  "const samples=" + JSON.stringify(samples) + ";"
+);
 
 function generateImageFile(outFile, paths) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
