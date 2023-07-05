@@ -3,14 +3,14 @@ const utils = {};
 utils.flaggedUsers = [1663882102141, 1663900040545, 1664485938220];
 
 utils.styles = {
-  car: "gray",
-  fish: "red",
-  house: "yellow",
-  tree: "green",
-  bicycle: "cyan",
-  guitar: "blue",
-  pencil: "magenta",
-  clock: "lightgray",
+  car: { color: "gray", text: "🚗" },
+  fish: { color: "red", text: "🐟" },
+  house: { color: "yellow", text: "🏠" },
+  tree: { color: "green", text: "🌴" },
+  bicycle: { color: "cyan", text: "🚲" },
+  guitar: { color: "blue", text: "🎸" },
+  pencil: { color: "magenta", text: "✏️" },
+  clock: { color: "lightgray", text: "🕐" },
 };
 
 utils.formatPercent = (n) => {
