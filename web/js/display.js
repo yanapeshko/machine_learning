@@ -57,3 +57,11 @@ function handleClick(sample, doScroll = true) {
   }
   chart.selectSample(sample);
 }
+
+function toggleInput() {
+  if (inputContainer.style.display == "none") {
+    inputContainer.style.display = "block";
+  } else {
+    inputContainer.style.display = "none";
+  }
+}
