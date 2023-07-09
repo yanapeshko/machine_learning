@@ -18,6 +18,7 @@
     <script src="../common/constants.js"></script>
     <script src="../common/utils.js"></script>
     <script src="../common/draw.js"></script>
+    <script src="../common/featureFunctions.js"></script>
 
     <script src="js/display.js"></script>
     <script src="js/sketchPad.js"></script>
@@ -45,8 +46,16 @@
       graphics.generateImages(utils.styles);
 
       const chart = new Chart(chartContainer, samples, options, handleClick);
-      const sketchPad = new SketchPad(inputContainer);
-      sketchPad.canvas.style.cssText += "outline:10px solid red;";
+      const sketchPad = new SketchPad(inputContainer, onDrawingUpdate);
+      sketchPad.canvas.style.cssText +=
+        "outline:10000px solid rgba(0,0,0,0.7);";
+      function onDrawingUpdate(paths) {
+        const point = [
+          featureFunctions.getPathCount(paths),
+          featureFunctions.getPointCount(paths),
+        ];
+        console.log(point);
+      }
     </script>
   </body>
 </html>
