@@ -74,6 +74,13 @@ class SketchPad {
     if (this.onUpdate) {
       this.onUpdate(this.paths);
     }
+    this.triggerUpdate();
+  }
+
+  triggerUpdate() {
+    if (this.onUpdate) {
+      this.onUpdate(this.paths);
+    }
   }
 
   #getMouse = (evt) => {
