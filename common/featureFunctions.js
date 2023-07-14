@@ -17,7 +17,7 @@ featureFunctions.getWidth = (paths) => {
   return max - min;
 };
 
-featureFunctions.getWidth = (paths) => {
+featureFunctions.getHeight = (paths) => {
   const points = paths.flat();
   const y = points.map((p) => p[1]);
   const min = Math.min(...y);
