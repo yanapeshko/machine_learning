@@ -16,6 +16,8 @@ for (const sample of samples) {
   sample.point = functions.map((f) => f(paths));
 }
 
+utils.normalizePoints(samples.map((s) => s.point));
+
 const featureNames = featureFunctions.inUse.map((f) => f.name);
 
 fs.writeFileSync(
