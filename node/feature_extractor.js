@@ -38,4 +38,11 @@ fs.writeFileSync(
   `const features=${JSON.stringify({ featureNames, samples })}`
 );
 
+fs.writeFileSync(
+  constants.MIN_MAX_JS,
+  `const minMax=
+${JSON.stringify(minMax)}
+  `
+);
+
 console.log("DONE!");
