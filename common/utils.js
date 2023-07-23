@@ -76,6 +76,7 @@ utils.normalizePoints = (points) => {
       points[i][j] = utils.invLerp(min[j], max[j], points[i][j]);
     }
   }
+  return min, max;
 };
 if (typeof module !== "undefined") {
   module.exports = utils;
