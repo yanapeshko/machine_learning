@@ -6,7 +6,9 @@ const fs = require("fs");
 
 console.log("EXTRACTING FEATURES...");
 
-const samples = JSON.parse(fs.readFileSync(constants.SAMPLES));
+const samples = JSON.parse(fs.readFileSync(constants.SAMPLES)).filter(
+  (s) => s.id != 3107
+);
 
 for (const sample of samples) {
   const paths = JSON.parse(
