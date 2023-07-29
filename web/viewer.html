@@ -52,6 +52,7 @@
       const sketchPad = new SketchPad(inputContainer, onDrawingUpdate);
       sketchPad.canvas.style.cssText +=
         "outline:10000px solid rgba(0,0,0,0.7);";
+
       function onDrawingUpdate(paths) {
         const functions = featureFunctions.inUse.map((f) => f.function);
         point = functions.map((f) => f(paths));
